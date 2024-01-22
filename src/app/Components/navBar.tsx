@@ -1,12 +1,14 @@
-"use client";
+"use client"
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation'
 import AtomicSpinner from "atomic-spinner";
+import { useRecoilState } from 'recoil';
+import { dataShare } from "../recoil/atom/streamingDataShare";
 
 const NavBar = () => {
   const [inputValue, setInputValue] = useState("");
   const [selectVal, setSelectVal] = useState("movie");
-  const [data, setData] = useState(null);
+  const [data, setData] = useRecoilState(dataShare);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter()
 
