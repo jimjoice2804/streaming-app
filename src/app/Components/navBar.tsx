@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import useSWR from "swr";
-// import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation'
 import AtomicSpinner from "atomic-spinner";
 
 const NavBar = () => {
@@ -9,6 +8,7 @@ const NavBar = () => {
   const [selectVal, setSelectVal] = useState("movie");
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter()
 
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -32,7 +32,7 @@ const NavBar = () => {
     const data = await response.json();
     setData(data);
     console.log("data", data);
-    // redirect("pages/movie");
+    router.push("pages/movie")
     setIsLoading(false);
   };
   return (
