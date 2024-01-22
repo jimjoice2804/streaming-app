@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div className="h-screen w-screen  bg-[#C5FAD5]">
+      OLA
+    </div>
+  );
+};
 
-export default page
+export default Page;
