@@ -1,6 +1,20 @@
 import { atom } from 'recoil';
 
-export const dataShare = atom({
-    key: 'dataShare', // unique ID (with respect to other atoms/selectors)
-    default: [], // default value (aka initial value)
-  });
+interface Movie {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
+
+interface Data {
+  Search: Movie[];
+  totalResults: string;
+  Response: string;
+}
+
+export const dataShare = atom<Data>({
+  key: 'dataShare', // unique ID (with respect to other atoms/selectors)
+  default: { Search: [], totalResults: '', Response: '' },
+});
