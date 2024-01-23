@@ -31,6 +31,7 @@ const NavBar = () => {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${apiKey}&s=${tempTitle}&type=${selectVal}`
     );
+    
     const data = await response.json();
     setData(data);
     console.log("data", data);
