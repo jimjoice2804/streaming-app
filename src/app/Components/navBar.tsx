@@ -11,7 +11,7 @@ const NavBar = () => {
   const [data, setData] = useRecoilState(dataShare);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
+ 
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   const SearchHandler = async () => {
@@ -27,7 +27,7 @@ const NavBar = () => {
 
     console.log(tempTitle);
     console.log(selectVal);
-    console.log("apiKey", apiKey);
+    console.log("apiKey =>", apiKey);
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${apiKey}&s=${tempTitle}&type=${selectVal}`
     );
