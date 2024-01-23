@@ -25,6 +25,7 @@ const NavBar = () => {
       }
     }
 
+      console.log("apiKey", apiKey);
     console.log(tempTitle);
     console.log(selectVal);
 
