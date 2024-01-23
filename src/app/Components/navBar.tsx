@@ -29,14 +29,14 @@ const NavBar = () => {
     console.log(selectVal);
 
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=${apiKey}&t=${tempTitle}&type=${selectVal}`
+      `https://www.omdbapi.com/?apikey=${apiKey}&s=${tempTitle}&type=${selectVal}`
     );
 
     const data = await response.json();
     setData(data);
     console.log("data", data);
-    router.push("pages/movie");
     setIsLoading(false);
+    router.push("pages/movie");
   };
   return (
     <div className="h-[34.8125rem] w-[55.125rem] flex items-center justify-center bg-[#C5FAD5]">

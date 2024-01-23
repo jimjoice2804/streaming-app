@@ -6,19 +6,21 @@ import { dataShare } from "@/app/recoil/atom/streamingDataShare";
 
 const Page = () => {
   const data = useRecoilValue(dataShare);
-  console.log("data => ", data);
+  console.log("data => ");
+  console.log(data);
+
   return (
     <div className="h-auto w-screen bg-[#C5FAD5] flex flex-wrap justify-center items-center">
       {data.Response === "True" ? (
-        data.Search.map((item, index) => {
+        data.Search?.map((item, index) => {
           return (
             <div
               className="m-4 bg-white shadow-lg rounded-lg overflow-hidden"
-              key={index}
+              key={item.imdbID}
             >
               <Image
                 src={item.Poster}
-                alt="poster"
+                alt={`poster of ${item.Title}`}
                 width={200}
                 height={200}
                 className="w-full h-64 object-cover object-center"
