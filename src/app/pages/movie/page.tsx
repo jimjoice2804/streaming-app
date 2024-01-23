@@ -24,7 +24,7 @@ const Page = () => {
                 className="w-full h-64 object-cover object-center"
               />
               <div className="p-6 font-bold">
-                <h1 className="text-xl font-bold"> Title {item.Title}</h1>
+                <h1 className="text-xl font-bold">{item.Title}</h1>
                 <h2 className="text-gray-700"> Year {item.Year}</h2>
                 <h3 className="text-gray-500"> Type {item.Type}</h3>
                 <h4 className="text-sm text-gray-500"> imdbID {item.imdbID}</h4>
