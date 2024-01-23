@@ -1,8 +1,8 @@
-"use client"
-import { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import AtomicSpinner from "atomic-spinner";
-import { useRecoilState } from 'recoil';
+import { useRecoilState } from "recoil";
 import { dataShare } from "../recoil/atom/streamingDataShare";
 
 const NavBar = () => {
@@ -10,7 +10,7 @@ const NavBar = () => {
   const [selectVal, setSelectVal] = useState("movie");
   const [data, setData] = useRecoilState(dataShare);
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -25,17 +25,16 @@ const NavBar = () => {
       }
     }
 
-    console.log("apiKey", apiKey);
     console.log(tempTitle);
     console.log(selectVal);
-
+    console.log("apiKey", apiKey);
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${apiKey}&s=${tempTitle}&type=${selectVal}`
     );
     const data = await response.json();
     setData(data);
     console.log("data", data);
-    router.push("pages/movie")
+    router.push("pages/movie");
     setIsLoading(false);
   };
   return (
