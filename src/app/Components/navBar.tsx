@@ -27,7 +27,7 @@ const NavBar = () => {
 
     console.log(tempTitle);
     console.log(selectVal);
-    console.log("apiKey =>", apiKey);
+
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${apiKey}&s=${tempTitle}&type=${selectVal}`
     );
